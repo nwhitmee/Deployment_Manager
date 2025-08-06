@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Read Rows</title>
+</head>
+<body>
+  <h2>Select a Row</h2>
+  <ul id="list"></ul>
+  <br><a href="index.html">Back</a>
+
+  <script src="data.js"></script>
+  <script>
+    const rows = getRows();
+    const ul = document.getElementById("list");
+
+    rows.forEach((row, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="view.html?index=${index}">${row[0]}</a>`;
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>
