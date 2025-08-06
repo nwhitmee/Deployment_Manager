@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Row</title>
+</head>
+<body>
+  <h2>Add a Row</h2>
+  <input type="text" id="col1" placeholder="First Name">
+  <input type="text" id="col2" placeholder="Last Name">
+  <input type="text" id="col3" placeholder="Age">
+  <button onclick="addRow()">Add</button>
+  <br><br><a href="index.html">Back</a>
+
+  <script src="data.js"></script>
+  <script>
+    function addRow() {
+      const rows = getRows();
+      const newRow = [
+        document.getElementById("col1").value,
+        document.getElementById("col2").value,
+        document.getElementById("col3").value
+      ];
+      rows.push(newRow);
+      saveRows(rows);
+    }
+  </script>
+</body>
+</html>
