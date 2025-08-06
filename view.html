@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Row</title>
+</head>
+<body>
+  <h2>Row Details</h2>
+  <div id="details"></div>
+  <br><a href="read.html">Back</a>
+
+  <script src="data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const index = parseInt(params.get("index"));
+    const rows = getRows();
+    const row = rows[index];
+    document.getElementById("details").innerText = row.join(", ");
+  </script>
+</body>
+</html>
