@@ -12,7 +12,7 @@
 
   <script>
     function loadFileAndNavigate(page) {
-      fetch('C:\Users\Whitm\Downloads\text_file_manager_deployment_txt\deployment.txt')
+      fetch('deployment.txt')
         .then(response => {
           if (!response.ok) throw new Error('File not found');
           return response.text();
