@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delete Row</title>
+</head>
+<body>
+  <h2>Delete a Row</h2>
+  <ul id="list"></ul>
+  <br><a href="index.html">Back</a>
+
+  <script src="data.js"></script>
+  <script>
+    const rows = getRows();
+    const ul = document.getElementById("list");
+
+    rows.forEach((row, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<button onclick="deleteRow(${index})">${row[0]}</button>`;
+      ul.appendChild(li);
+    });
+
+    function deleteRow(index) {
+      rows.splice(index, 1);
+      saveRows(rows);
+    }
+  </script>
+</body>
+</html>
