@@ -12,7 +12,7 @@
 
   <script>
     function loadFileAndNavigate(page) {
-      fetch('deployment.txt')
+      fetch('https://github.com/nwhitmee/Deployment_Manager/blob/main/deployment.txt')
         .then(response => {
           if (!response.ok) throw new Error('File not found');
           return response.text();
