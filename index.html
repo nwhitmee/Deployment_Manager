@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text File Manager</title>
+</head>
+<body>
+  <h1>Manage Text File (deployment.txt)</h1>
+  <p>This page reads from a fixed file named <strong>deployment.txt</strong>.</p>
+  <button onclick="loadFileAndNavigate('add.html')">Add Row</button>
+  <button onclick="loadFileAndNavigate('read.html')">Read Rows</button>
+  <button onclick="loadFileAndNavigate('delete.html')">Delete Row</button>
+
+  <script>
+    function loadFileAndNavigate(page) {
+      fetch('C:\Users\Whitm\Downloads\text_file_manager_deployment_txt\deployment.txt')
+        .then(response => {
+          if (!response.ok) throw new Error('File not found');
+          return response.text();
+        })
+        .then(data => {
+          localStorage.setItem("textData", data);
+          window.location.href = page;
+        })
+        .catch(error => {
+          alert('Could not load deployment.txt: ' + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
